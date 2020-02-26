@@ -4,7 +4,9 @@ const path = require('path');
 const userRoute = require('./routes/shop');//injecting code from shop.js
 const adminRoute = require('./routes/admin');//injecting code from admin.js
 const app = express();
+app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 app.use(userRoute);
@@ -17,6 +19,6 @@ app.use(function(req, res, next){
 });
 
 
-app.listen(8000, ()=> {
+app.listen(8080, ()=> {
     console.log("Server is running on Port 3000.");
 })
