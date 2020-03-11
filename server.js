@@ -13,12 +13,12 @@ app.set('views', 'views');
 
 
 app.use(userRoute);
-app.use('/admin', adminRoute.router);
+app.use('/admin', adminRoute);
 
 
 app.use(errorPage.getErrorPage);
 
 
-app.listen(2000, ()=> {
+app.listen(3000, ()=> {
     console.log("Server is running on Port 3000.");
 })

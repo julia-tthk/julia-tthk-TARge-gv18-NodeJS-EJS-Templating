@@ -13,3 +13,15 @@ exports.postAddProducts = (req, res) => {
     products.push({title: req.body.title});
     res.redirect('/');
 }
+
+exports.getProducts = (req, res) => {
+    
+    console.log(products);
+    
+    res.render('shop', {
+        pageTitle: 'Welcome to My Shop!',
+        products: products,
+        path: '/'
+    });
+   // res.sendFile(path.join(rootDirectory, 'views', 'shop.html'));
+}
